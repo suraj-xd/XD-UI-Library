@@ -187,7 +187,7 @@ export function AI_Prompt({ initialMessages = [], ticker }: AI_PromptProps) {
   const [value, setValue] = useState("");
   const [selectedContentForInput, setSelectedContentForInput] = useState<
     string | null
-  >(null);
+  >("You can select parts of this text to add to your next message!");
   const { textareaRef, adjustHeight } = useAutoResizeTextarea({
     minHeight: 72,
     maxHeight: 300,
@@ -351,7 +351,6 @@ export function AI_Prompt({ initialMessages = [], ticker }: AI_PromptProps) {
               onClear={() => setSelectedContentForInput(null)}
             />
             <Textarea
-              autoFocus
               id="ai-input-15"
               value={value}
               placeholder={

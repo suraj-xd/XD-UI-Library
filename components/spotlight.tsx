@@ -82,7 +82,7 @@ export function SpotlightNewDemo() {
               asChild
             >
               <a
-                href="https://21st.dev/suraj-xd"
+                href="https://github.com/suraj-xd/XD-UI-Library"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -97,7 +97,7 @@ export function SpotlightNewDemo() {
               asChild
             >
               <a
-                href="https://github.com/suraj-xd/"
+                href="https://github.com/suraj-xd/XD-UI-Library"
                 target="_blank"
                 rel="noopener noreferrer"
               >
