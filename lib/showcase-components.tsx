@@ -272,6 +272,7 @@ export default function LiquidGlass() {
 }
 
     `,
+    link:"https://21st.dev/suraj-xd/liquid-glass/default",
     dependencies: ['lucide-react'],
   },
   {
