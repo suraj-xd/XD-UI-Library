@@ -7,7 +7,6 @@ import { useMediaQuery } from "@/hooks/use-media-query"; // Assuming you have th
 import { showcaseComponents } from "@/lib/showcase-components";
 import { SpotlightNewDemo } from "./spotlight";
 import { Footer } from "./footer";
-
 interface ShowcaseLayoutProps {
   pageTitle?: string; // Made optional as header is now static
   components?: ComponentShowcaseItem[];

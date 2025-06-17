@@ -1,10 +1,10 @@
-import type { ReactElement } from "react"
+import type { ReactElement, LazyExoticComponent, ComponentType } from "react"
 
 export interface ComponentShowcaseItem {
   id: string
   title: string
   description: string
-  component: ReactElement
+  component: any
   code: string
   link?: string
   dependencies?: string[]

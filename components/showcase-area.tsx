@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense, lazy } from "react";
 import { Button } from "@/components/ui/button";
 import { CodeViewer } from "./code-viewer";
 import type { ComponentShowcaseItem } from "@/types";
@@ -93,7 +93,7 @@ export function ShowcaseArea({ components }: ShowcaseAreaProps) {
 
                 {getActiveTab(component.id) === "preview" ? (
                   <div className="min-h-[400px] flex items-center justify-center w-full">
-                    {component.component}
+                    {(component.component) as React.ReactNode}
                   </div>
                 ) : (
                   <CodeViewer key={component.id} code={component.code} />

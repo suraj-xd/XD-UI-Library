@@ -11,11 +11,6 @@ interface GlassEffectProps {
   target?: string;
 }
 
-interface MenuItem {
-  label: string;
-  onClick?: () => void;
-}
-
 interface DockIcon {
   src: string;
   alt: string;
@@ -43,7 +38,7 @@ const GlassEffect: React.FC<GlassEffectProps> = ({
     >
       {/* Glass Layers */}
       <div
-        className="absolute inset-0 z-0 overflow-hidden rounded-inherit"
+        className="absolute inset-0 z-0 overflow-hidden rounded-inherit rounded-3xl"
         style={{
           backdropFilter: "blur(3px)",
           filter: "url(#glass-distortion)",
@@ -55,7 +50,7 @@ const GlassEffect: React.FC<GlassEffectProps> = ({
         style={{ background: "rgba(255, 255, 255, 0.25)" }}
       />
       <div
-        className="absolute inset-0 z-20 overflow-hidden rounded-inherit"
+        className="absolute inset-0 z-20 rounded-inherit rounded-3xl overflow-hidden"
         style={{
           boxShadow:
             "inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5), inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5)",
@@ -85,7 +80,7 @@ const GlassDock: React.FC<{ icons: DockIcon[]; href?: string }> = ({
     href={href}
     className="rounded-3xl p-3 hover:p-4 hover:rounded-4xl"
   >
-    <div className="flex items-center justify-center gap-2 rounded-3xl p-3 py-0 px-0.5">
+    <div className="flex items-center justify-center gap-2 rounded-3xl p-3 py-0 px-0.5 overflow-hidden">
       {icons.map((icon, index) => (
         <img
           key={index}
@@ -110,7 +105,7 @@ const GlassButton: React.FC<{ children: React.ReactNode; href?: string }> = ({
 }) => (
   <GlassEffect
     href={href}
-    className="rounded-3xl px-10 py-6 hover:px-11 hover:py-7 hover:rounded-4xl"
+    className="rounded-3xl px-10 py-6 hover:px-11 hover:py-7 hover:rounded-4xl overflow-hidden"
   >
     <div
       className="transition-all duration-700 hover:scale-95"
@@ -178,14 +173,6 @@ const GlassFilter: React.FC = () => (
 );
 // Main Component
 export default function LiquidGlass() {
-  // Configuration data
-  const menuItems: MenuItem[] = [
-    { label: "Home" },
-    { label: "Projects" },
-    { label: "About" },
-    { label: "Contact" },
-  ];
-
   const dockIcons: DockIcon[] = [
     {
       src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/a13d1acfd046f503f987c1c95af582c8_low_res_Claude.png",
@@ -215,19 +202,18 @@ export default function LiquidGlass() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center font-light relative overflow-hidden"
+      className="h-[500px] flex items-center justify-center font-light relative overflow-hidden w-full"
       style={{
         background: `url("https://images.unsplash.com/photo-1432251407527-504a6b4174a2?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center center`,
-        backgroundSize: "400px",
         animation: "moveBackground 60s linear infinite",
       }}
     >
       <GlassFilter />
 
-      <div className="flex flex-col gap-6 items-end justify-center">
-        <GlassDock icons={dockIcons} href="https://x.com/lucasromerodb" />
+      <div className="flex flex-col gap-6 items-center justify-center w-full">
+        <GlassDock icons={dockIcons} href="https://x.com/notsurajgaud" />
 
-        <GlassButton href="https://x.com/lucasromerodb">
+        <GlassButton href="https://x.com/notsurajgaud">
           <div className="text-xl text-white">
             <p>How can i help you today?</p>
           </div>
