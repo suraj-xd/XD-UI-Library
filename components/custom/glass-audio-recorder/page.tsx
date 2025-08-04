@@ -6,7 +6,7 @@ import { Play, Square, Pause } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, forwardRef } from "react";
-import { PauseIcon, PlayIcon, StopIcon } from "@phosphor-icons/react";
+import { PauseIcon, StopIcon } from "@phosphor-icons/react";
 
 interface GlassButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
@@ -237,7 +237,9 @@ const GlassButton = forwardRef<HTMLButtonElement, GlassButtonProps>(
   }
 );
 
-export default function Page() {
+GlassButton.displayName = "GlassButton";
+
+export default function GlassAudioRecorder() {
   const [isRecording, setIsRecording] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   const [time, setTime] = useState(92); // 1:32 in seconds
@@ -289,8 +291,8 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
-      <div className="bg-gradi [#f7f7f7] rounded-3xl shadow-2xl px-12 py-6 pt-8 max-w-md w-full">
+    <div className="min-h-[600px] w-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
+      <div className="bg-gradient-to-t from-[#f7f7f7] to-white rounded-3xl px-12 py-6 pt-8 max-w-md w-full">
         {/* Recording Indicator */}
         <div className="flex items-center gap-3 mb-2">
           <div
@@ -341,7 +343,7 @@ export default function Page() {
                 onClick={handlePause}
                 icon={
                   isPaused ? (
-                    <PlayIcon weight="fill" size={18} />
+                    <Play size={18} />
                   ) : (
                     <PauseIcon weight="fill" size={18} />
                   )
