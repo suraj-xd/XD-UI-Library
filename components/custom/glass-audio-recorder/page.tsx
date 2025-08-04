@@ -6,7 +6,7 @@ import { Play, Square, Pause } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, forwardRef } from "react";
-import { PauseIcon, StopIcon } from "@phosphor-icons/react";
+import { PauseIcon, PlayIcon, StopIcon } from "@phosphor-icons/react";
 
 interface GlassButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
@@ -343,7 +343,7 @@ export default function GlassAudioRecorder() {
                 onClick={handlePause}
                 icon={
                   isPaused ? (
-                    <Play size={18} />
+                    <PlayIcon weight="fill" size={18} />
                   ) : (
                     <PauseIcon weight="fill" size={18} />
                   )
