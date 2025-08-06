@@ -416,6 +416,7 @@ export default function GlassAudioRecorder() {
   );
 }`,
     dependencies: ['lucide-react', '@phosphor-icons/react', 'button'],
+    link:"https://21st.dev/suraj-xd/liquid-glass-recorder/default"
   },
   {
     id: "motion-grid",
