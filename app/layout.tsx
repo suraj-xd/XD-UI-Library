@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider" // Assuming you have this for shadcn/ui
 import { instrumentSerif, satoshi, ppNeueBit, ppRightSerif, ppMondwest } from "@/utils/fonts";
 import type { Viewport } from "next"
+import { Analytics } from "@vercel/analytics/next"
 export const metadata = {
   title: "XD :UI",
   description: "A showcase of UI components library",
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
