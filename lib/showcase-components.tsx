@@ -9,6 +9,8 @@ import QuickTooltipActions from "@/components/custom/quick-tooltip-actions/page"
 import { lazy, Suspense } from "react";
 import MotionGridDemo from "@/components/custom/motion-grid/motion-grid";
 import GlassAudioRecorder from "@/components/custom/glass-audio-recorder/page";
+import AgentThinkingLoader from "@/components/custom/agent-thinking-loader/page";
+import { agentThinkingLoaderCode } from "@/components/custom/agent-thinking-loader/source";
 
 const LazyLiquidGlass = lazy(() => import("@/components/custom/liquid-glass/liquid-glass"))
 // This list is for the actual rendered components in ShowcaseArea
@@ -23,6 +25,14 @@ const SuspensedLiquidGlass = () => {
   )
 }
 export const showcaseComponents: ComponentShowcaseItem[] = [
+  {
+    id: "agent-thinking-loader",
+    title: "Agent Thinking Loader",
+    description: "Pixel-orb thinking indicators for one agent or a stacked group of agents.",
+    component: <AgentThinkingLoader />,
+    code: agentThinkingLoaderCode,
+    dependencies: ["lucide-react", "@radix-ui/react-popover", "button", "popover"],
+  },
   {
     id: "glass-audio-recorder",
     title: "Glass Audio Recorder",

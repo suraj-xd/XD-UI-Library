@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Suspense, lazy } from "react";
+import { Fragment, useState, Suspense, lazy } from "react";
 import { Button } from "@/components/ui/button";
 import { CodeViewer } from "./code-viewer";
 import type { ComponentShowcaseItem } from "@/types";
@@ -30,7 +30,7 @@ export function ShowcaseArea({ components }: ShowcaseAreaProps) {
       {/* Adjusted for header and toolbar */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {components.map((component) => (
-          <>
+          <Fragment key={component.id}>
             <div className="flex md:flex-row flex-col items-center justify-between">
               <h1
                 style={{ fontFamily: "var(--font-pp-neue-bit)" }}
@@ -110,7 +110,7 @@ export function ShowcaseArea({ components }: ShowcaseAreaProps) {
                 </p>
               </div>
             </section>
-          </>
+          </Fragment>
         ))}
         {components.length === 0 && (
           <div className="text-center py-10">
