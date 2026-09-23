@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pixel-weave:sync": "node scripts/sync-pixel-weave.mjs",
+    "pixel-weave:check": "node scripts/sync-pixel-weave.mjs --check",
+    "pixel-weave:test": "npm test --prefix packages/pixel-weave",
+    "prebuild": "npm run pixel-weave:check"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
